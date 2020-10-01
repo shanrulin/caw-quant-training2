@@ -8,4 +8,18 @@ A basic quant trading system includes:
 3. logging and notification module
 4. performance analysis
 
-You need to create a new repo to do tasks in this section.
+You need to create a new repo to do tasks in this section. Recommended file structure:
+
+├── LICENSE
+├── README.md
+└── section3
+    ├── README.md
+    ├── task1
+    │   └── README.md
+    ├── task2
+    ├── ...
+    ├── your_code.py
+    └── your_folder.py
+    │   └── your_file
+    └── ...
+
