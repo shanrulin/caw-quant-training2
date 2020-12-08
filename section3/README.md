@@ -10,6 +10,7 @@ A basic quant trading system includes:
 
 You need to create a new repo to do tasks in this section. Recommended file structure:
 
+```
 ├── LICENSE
 ├── README.md
 └── section3
@@ -19,7 +20,7 @@ You need to create a new repo to do tasks in this section. Recommended file stru
     ├── task2
     ├── ...
     ├── your_code.py
-    └── your_folder.py
+    └── your_folder
     │   └── your_file
     └── ...
-
+```
