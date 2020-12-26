@@ -11,9 +11,8 @@ class TradingBot:
     def run(self):
         self.data.feed(self.strategy.next)
 
-
 if __name__ == "__main__":
-    data = BinanceCandle(coin='BTCUSDT', freq='1m')
-    strategy = SMACross(status=0, pfast=10, pslow=30, outer = data)
+    data = BinanceCandle(coin='ETHBTC', freq='1m')
+    strategy = SMACross(status=0, pfast=10, pslow=30)
     tradingbot = TradingBot(data, strategy)
     tradingbot.run()
