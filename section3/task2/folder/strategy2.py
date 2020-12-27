@@ -22,12 +22,12 @@ def cross_down(fast: pd.Series, slow: pd.Series) -> pd.Series:
 
 class SMACross:
 
-    def __init__(self, status, pfast, pslow):
+    def __init__(self, status, pfast, pslow, broker):
         self.status = status # status = 0 means not in the market
         self.pfast = pfast
         self.pslow = pslow
         self.df = pd.DataFrame(columns=['close'])
-        self.broker = Broker()
+        self.broker = broker
 
     def next(self, candle):
         #print(candle)
@@ -45,13 +45,13 @@ class SMACross:
             if cross_up(fast, slow).iloc[-1] and self.status == 0:
                 #print("Go into market signal")
                 ## send buy order
-                self.broker.buy()
+                self.broker.buy(coin='ETHBTC')
                 ## update self.status
                 self.status = 1
 
             elif cross_down(fast, slow).iloc[-1] and self.status == 1:
                 #print("Exit market signal")
                 ## send sell order
-                self.broker.sell()
+                self.broker.sell(coin='ETHBTC')
                 ## update self.status
                 self.status = 0
