@@ -21,6 +21,6 @@ if __name__ == "__main__":
 
     broker = Broker(api_key, api_secret)
     data = BinanceCandle(coin='ETHBTC', freq='1m')
-    strategy = SMACross(status=0, pfast=10, pslow=30, broker=broker)
+    strategy = SMACross(status=0, pfast=10, pslow=30, broker=broker, coin='ETHBTC', quantity=100)
     tradingbot = TradingBot(data, strategy)
     tradingbot.run()
